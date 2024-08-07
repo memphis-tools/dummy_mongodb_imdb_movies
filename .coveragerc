@@ -1,0 +1,9 @@
+[run]
+branch = True
+source = app
+
+[report]
+omit = \
+  */__init__.py, \
+  */application_settings.py, \
+  */models.py

@@ -1,0 +1,15 @@
+[flake8]
+exclude =
+  env,
+  .env,
+  .venv,
+  venv,
+  .envrc,
+  .env.rc,
+  .git,
+  __pycache__,
+  .pytest_cache,
+  .cache
+
+ignore = F841
+max-line-length = 119

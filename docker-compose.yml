@@ -1,0 +1,20 @@
+services:
+  dummy_mongo:
+    image: mongo:latest
+    container_name: dummy_mongodb_movies
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - movie_theater_network
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+
+volumes:
+  mongo-data:
+
+networks:
+  movie_theater_network:
+    driver: bridge

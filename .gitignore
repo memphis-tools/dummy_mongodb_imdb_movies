@@ -1,0 +1,13 @@
+env
+.env
+.envrc
+.env.rc
+venv
+.venv
+__pycache__
+.coverage
+.pytest_cache
+.pyrc
+cov_html
+htmlcov
+
