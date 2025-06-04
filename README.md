@@ -1,4 +1,5 @@
-![Screenshot](https://img.shields.io/badge/python-v3.11-blue?logo=python&logoColor=yellow)
+![Screenshot](https://img.shields.io/badge/python-v3.12.10-blue?logo=python&logoColor=yellow)
+![Screenshot](https://img.shields.io/badge/poetry-v1.7.1-blue?logo=poetry&logoColor=yellow)
 ![Screenshot](https://img.shields.io/badge/docker--blue?logo=docker&logoColor=yellow)
 ![Screenshot](https://img.shields.io/badge/mongodb--blue?logo=mongodb&logoColor=yellow)
 
@@ -49,7 +50,7 @@ An asyncio task consists in (for example):
 
 
 ## TECHNOLOGIES
-Python 3.11 and later
+Python 3.12 and later
 
 Asyncio
 
@@ -70,6 +71,8 @@ At the project root folder, touch (create) a ".env" file (the default name a doc
 
   source .envrc
 
+With a venv, without poetry:
+
   python -m venv venv
 
   source venv/bin/activate
@@ -80,6 +83,14 @@ At the project root folder, touch (create) a ".env" file (the default name a doc
 
   python app/main.py
 
+You can, and should, use poetry to update packages easily. First download and install it.
+
+  poetry update
+
+  docker compose -f docker-compose.yml up -d --build
+
+  poetry run python app/main.py
+
 In my context i obtain:
 
   ![Screenshot](illustrations/dummy_mongodb_imdb_movies.png)
@@ -87,9 +98,17 @@ In my context i obtain:
 ## TO RUN TESTS
 **I use unittest which does not support async/await. Tests need to be improved with pytest pytest-asyncio.**
 
+We declare and export the Python path
+
     export PYTHONPATH=$PYTHONPATH:./app
 
+We run unittest
+
     python -m unittest
+
+Or using poetry:
+
+    poetry run python -m unittest
 
 ## STOP AND PURGE
 
@@ -106,7 +125,7 @@ Once the code executed we dump the database into app/db_dump folder.
 
     docker cp dummy_mongodb_movies:/data/db/dump ./app/db_dump
 
-Then people can use the database it. First copy it on container then restore.
+Then people can use the database. First copy it on container then restore.
 
     docker cp app/db_dump/dump/movies_db/ dummy_mongodb_movies:/data/db/dump
 
