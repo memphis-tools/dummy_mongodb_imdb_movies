@@ -10,4 +10,4 @@ __pycache__
 .pyrc
 cov_html
 htmlcov
-
+.cache
