@@ -200,7 +200,7 @@ if __name__ == "__main__":
         raise ConnectionError("[-] Sir, Mongod service is not active")
     movies_list = create_movies_list()
     start_time = time.time()
-    asyncio.get_event_loop().run_until_complete(search_movies(movies_list))
+    asyncio.run(search_movies(movies_list))
     duration = time.time() - start_time
     formated_duration = f"{int(duration//60)} minute(s) {int(duration%60)} seconde(s)"
     print(f"Script ended in {formated_duration}")
