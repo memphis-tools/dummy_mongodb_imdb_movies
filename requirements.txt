@@ -26,5 +26,5 @@ pytest-asyncio==0.23.8
 requests==2.32.3
 rich==13.7.1
 soupsieve==2.5
-urllib3==2.2.2
+urllib3==2.5.0
 yarl>=1.9.4
