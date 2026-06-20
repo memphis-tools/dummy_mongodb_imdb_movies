@@ -5,6 +5,10 @@
 
 # DUMMY APP FOR LEARNING PURPOSES
 
+**2026/06/20: Due to IMDb website security updates the web scraping used can't work.**
+
+**Project is archived read-only with the last working dump.**
+
 This dummy app involves web scraping and using MongoDB with Python.
 
 The aim is to create a personal movie database with illustration pictures for each movie, which can then be used in other projects.
@@ -69,7 +73,7 @@ At the project root folder, touch (create) a ".env" file (the default name a doc
     export MONGO_INITDB_ROOT_PASSWORD="superP@ssword"
 
 
-  source .envrc
+  source .env
 
 With a venv, without poetry:
 
@@ -117,7 +121,10 @@ Or using poetry:
   docker volume rm dummy_mongodb_imdb_movies_mongo-data
 
 ## HOW USE IT ?
-The project will be loaded as a submodule. We want people to have access to a ready-to-use database and illustration pictures.
+
+The project will be loaded as a submodule.
+
+We want people to have access to a ready-to-use database and illustration pictures.
 
 Once the code executed we dump the database into app/db_dump folder.
 
